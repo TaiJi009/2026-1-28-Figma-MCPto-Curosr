@@ -15,20 +15,23 @@ class ReportView extends StatefulWidget {
 
 class _ReportViewState extends State<ReportView> {
   String _statusFilter = 'all';
-  String _keyword = '';
+  final TextEditingController _keywordController = TextEditingController();
   DateTimeRange? _dateRange;
+
+  @override
+  void dispose() {
+    _keywordController.dispose();
+    super.dispose();
+  }
 
   List<Map<String, dynamic>> get _filteredOrders {
     var list = List<Map<String, dynamic>>.from(MockData.orders);
     if (_statusFilter != 'all') {
       list = list.where((o) => o['status'] == _statusFilter).toList();
     }
-    if (_keyword.isNotEmpty) {
-      list = list.where((o) => '${o['id']}'.contains(_keyword)).toList();
-    }
-    if (_dateRange != null) {
-      // simplified: filter by date if we had DateTime on items
-      list = list; // keep as-is for demo
+    final kw = _keywordController.text.trim();
+    if (kw.isNotEmpty) {
+      list = list.where((o) => '${o['id']}'.contains(kw)).toList();
     }
     return list;
   }
@@ -45,22 +48,34 @@ class _ReportViewState extends State<ReportView> {
           Wrap(
             spacing: 16,
             runSpacing: 16,
-            children: MockData.kpis.map((k) => SizedBox(width: 200, child: KpiCard(title: k.title, value: k.value, unit: k.unit))).toList(),
+            children: MockData.kpis
+                .map(
+                  (k) => SizedBox(
+                    width: 200,
+                    child: KpiCard(
+                      title: k['title']!,
+                      value: k['value']!,
+                      unit: k['unit']!,
+                    ),
+                  ),
+                )
+                .toList(),
           ),
           const SizedBox(height: 24),
           FilterBar(
             status: _statusFilter,
-            keyword: _keyword,
+            keywordController: _keywordController,
             dateRange: _dateRange,
             onStatusChanged: (v) => setState(() => _statusFilter = v),
-            onKeywordChanged: (v) => setState(() => _keyword = v),
+            onKeywordChanged: (_) => setState(() {}),
             onDateRangeChanged: (v) => setState(() => _dateRange = v),
             onQuery: () => setState(() {}),
-            onReset: () => setState(() {
+            onReset: () {
               _statusFilter = 'all';
-              _keyword = '';
+              _keywordController.clear();
               _dateRange = null;
-            }),
+              setState(() {});
+            },
           ),
           const SizedBox(height: 24),
           const ChartsSection(),
