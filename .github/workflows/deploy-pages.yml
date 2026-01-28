@@ -23,13 +23,23 @@ jobs:
           flutter config --enable-web
           flutter precache --web
 
-      - name: Install dependencies
+      - name: Clean and install dependencies
         working-directory: dashboard_web
-        run: flutter pub get
+        run: |
+          flutter clean
+          flutter pub get
 
       - name: Build web
         working-directory: dashboard_web
-        run: flutter build web --web-renderer html --base-href=/2026-1-28-Figma-MCPto-Curosr/
+        run: |
+          set -o pipefail
+          flutter build web --web-renderer html --base-href=/2026-1-28-Figma-MCPto-Curosr/ 2>&1 | tee build.log || {
+            echo "=== Lines with Error/Exception ==="
+            grep -n -i "error\|exception" build.log | tail -40
+            echo "=== Last 80 lines ==="
+            tail -80 build.log
+            exit 1
+          }
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
