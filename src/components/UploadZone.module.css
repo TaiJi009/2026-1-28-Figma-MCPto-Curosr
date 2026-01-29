@@ -1,0 +1,49 @@
+.zone {
+  border: 2px dashed var(--nucleus-border);
+  border-radius: var(--nucleus-radius-sm);
+  padding: 2rem;
+  text-align: center;
+  background: var(--nucleus-surface);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.zone.drag {
+  border-color: var(--nucleus-primary);
+  background: rgba(107, 78, 255, 0.08);
+}
+
+.input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.label {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--nucleus-primary);
+  color: var(--nucleus-text);
+  border-radius: var(--nucleus-radius-lg);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.label:hover {
+  opacity: 0.9;
+}
+
+.hint {
+  margin: 1rem 0 0;
+  font-size: 14px;
+  color: var(--nucleus-text-muted);
+}
+
+.error {
+  margin: 0.75rem 0 0;
+  color: var(--nucleus-error);
+  font-size: 14px;
+}

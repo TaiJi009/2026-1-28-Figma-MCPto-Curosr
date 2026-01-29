@@ -1,0 +1,41 @@
+/* Nucleus UI design tokens from Figma */
+:root {
+  --nucleus-primary: rgb(107, 78, 255);
+  --nucleus-primary-light: rgb(153, 144, 255);
+  --nucleus-bg: rgb(9, 10, 10);
+  --nucleus-surface: rgb(32, 35, 37);
+  --nucleus-text: rgb(255, 255, 255);
+  --nucleus-text-muted: rgb(151, 156, 158);
+  --nucleus-error: rgb(255, 82, 71);
+  --nucleus-border: rgb(218, 218, 218);
+  --nucleus-radius-sm: 8px;
+  --nucleus-radius-md: 16px;
+  --nucleus-radius-lg: 48px;
+  --nucleus-font: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--nucleus-font);
+  background-color: var(--nucleus-bg);
+  color: var(--nucleus-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select {
+  font-family: inherit;
+}

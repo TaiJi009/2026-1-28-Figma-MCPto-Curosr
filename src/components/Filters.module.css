@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  color: var(--nucleus-text-muted);
+}
+
+.select {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--nucleus-radius-sm);
+  border: 1px solid var(--nucleus-border);
+  background: var(--nucleus-surface);
+  color: var(--nucleus-text);
+  font-size: 14px;
+  min-width: 100px;
+}
+
+.select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

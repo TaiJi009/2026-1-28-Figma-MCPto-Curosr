@@ -1,0 +1,43 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--nucleus-surface);
+  border-radius: var(--nucleus-radius-sm);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 14px;
+  color: var(--nucleus-text-muted);
+}
+
+.valueIncome,
+.valueExpense,
+.valueBalance,
+.valueNegative {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.valueIncome {
+  color: #4ade80;
+}
+
+.valueExpense {
+  color: var(--nucleus-error);
+}
+
+.valueBalance {
+  color: var(--nucleus-primary-light);
+}
+
+.valueNegative {
+  color: var(--nucleus-error);
+}

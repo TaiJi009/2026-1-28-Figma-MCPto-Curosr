@@ -1,0 +1,51 @@
+.wrapper {
+  background: var(--nucleus-surface);
+  border-radius: var(--nucleus-radius-sm);
+  padding: 1.25rem;
+}
+
+.title {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.scroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th,
+.table td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.table th {
+  color: var(--nucleus-text-muted);
+  font-weight: 500;
+}
+
+.num {
+  text-align: right;
+}
+
+.income {
+  color: #4ade80;
+}
+
+.expense {
+  color: var(--nucleus-error);
+}
+
+.empty {
+  text-align: center;
+  color: var(--nucleus-text-muted);
+  padding: 2rem;
+}
