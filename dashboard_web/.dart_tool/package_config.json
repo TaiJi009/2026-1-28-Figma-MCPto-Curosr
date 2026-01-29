@@ -69,7 +69,7 @@
     },
     {
       "name": "fl_chart",
-      "rootUri": "file:///C:/Users/%E8%8A%B1%E7%BA%A2%E6%98%93%E8%90%BD%E4%BC%BC%E9%83%8E%E6%84%8F/AppData/Local/Pub/Cache/hosted/pub.dev/fl_chart-0.66.2",
+      "rootUri": "file:///C:/Users/%E8%8A%B1%E7%BA%A2%E6%98%93%E8%90%BD%E4%BC%BC%E9%83%8E%E6%84%8F/AppData/Local/Pub/Cache/hosted/pub.dev/fl_chart-0.66.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -99,9 +99,9 @@
     },
     {
       "name": "google_fonts",
-      "rootUri": "file:///C:/Users/%E8%8A%B1%E7%BA%A2%E6%98%93%E8%90%BD%E4%BC%BC%E9%83%8E%E6%84%8F/AppData/Local/Pub/Cache/hosted/pub.dev/google_fonts-6.3.3",
+      "rootUri": "file:///C:/Users/%E8%8A%B1%E7%BA%A2%E6%98%93%E8%90%BD%E4%BC%BC%E9%83%8E%E6%84%8F/AppData/Local/Pub/Cache/hosted/pub.dev/google_fonts-6.1.0",
       "packageUri": "lib/",
-      "languageVersion": "3.9"
+      "languageVersion": "2.14"
     },
     {
       "name": "hooks",
